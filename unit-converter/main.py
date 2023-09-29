@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 
 #colors
-cor01 = '#3b3b3b'     # Black
+cor01 = '#3b3b3b'     # Blacknpipp
 cor02 = '#ffffff'     # White
 cor03 = '#48b3e0'     # Blue
 
