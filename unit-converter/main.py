@@ -34,7 +34,7 @@ l_app_name = Label(frame_up, text='Measurement Units Calculator', height=1, padx
 l_app_name.place(x=50, y=10)
 
 # --------------------- Settings Frame_left --------------
-# Weigth Button
+# Weight Button
 img_0 = Image.open('icons/weight.png')
 img_0 = img_0.resize((50,50))
 img_0 = ImageTk.PhotoImage(img_0)
@@ -66,6 +66,45 @@ btn_3 = Button(frame_left, text='Square', image=img_3, compound=LEFT, width=130,
                overrelief='solid', anchor='nw', font=('Ivy 10 bold'), bg=cor03, fg=cor02)
 btn_3.grid(row=1, column=0, sticky=NSEW, pady=5, padx=5)
 
+# Volume Button
+img_4 = Image.open('icons/volume.png')
+img_4 = img_4.resize((50,50))
+img_4 = ImageTk.PhotoImage(img_4)
+btn_4 = Button(frame_left, text='Volume', image=img_4, compound=LEFT, width=130, height=50, relief='flat',
+               overrelief='solid', anchor='nw', font=('Ivy 10 bold'), bg=cor03, fg=cor02)
+btn_4.grid(row=1, column=1, sticky=NSEW, pady=5, padx=5)
+
+# Speed Button
+img_5 = Image.open('icons/speed.png')
+img_5 = img_5.resize((50,50))
+img_5 = ImageTk.PhotoImage(img_5)
+btn_5 = Button(frame_left, text='Speed', image=img_5, compound=LEFT, width=130, height=50, relief='flat',
+               overrelief='solid', anchor='nw', font=('Ivy 10 bold'), bg=cor03, fg=cor02)
+btn_5.grid(row=1, column=2, sticky=NSEW, pady=5, padx=5)
+
+# Temperature Button
+img_6 = Image.open('icons/temperature.png')
+img_6 = img_6.resize((50,50))
+img_6 = ImageTk.PhotoImage(img_6)
+btn_6 = Button(frame_left, text='Temperature', image=img_6, compound=LEFT, width=130, height=50, relief='flat',
+               overrelief='solid', anchor='nw', font=('Ivy 10 bold'), bg=cor03, fg=cor02)
+btn_6.grid(row=2, column=0, sticky=NSEW, pady=5, padx=5)
+
+# Energy Button
+img_7 = Image.open('icons/energy.png')
+img_7 = img_7.resize((50,50))
+img_7 = ImageTk.PhotoImage(img_7)
+btn_7 = Button(frame_left, text='Energy', image=img_7, compound=LEFT, width=130, height=50, relief='flat',
+               overrelief='solid', anchor='nw', font=('Ivy 10 bold'), bg=cor03, fg=cor02)
+btn_7.grid(row=2, column=1, sticky=NSEW, pady=5, padx=5)
+
+# Pressure Button
+img_8 = Image.open('icons/pressure.png')
+img_8 = img_8.resize((50,50))
+img_8 = ImageTk.PhotoImage(img_8)
+btn_8 = Button(frame_left, text='Pressure', image=img_8, compound=LEFT, width=130, height=50, relief='flat',
+               overrelief='solid', anchor='nw', font=('Ivy 10 bold'), bg=cor03, fg=cor02)
+btn_8.grid(row=2, column=2, sticky=NSEW, pady=5, padx=5)
 
 
 window.mainloop()
