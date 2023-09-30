@@ -84,7 +84,7 @@ btn_5.grid(row=1, column=2, sticky=NSEW, pady=5, padx=5)
 
 # Temperature Button
 img_6 = Image.open('icons/temperature.png')
-img_6 = img_6.resize((50,50))
+img_6 = img_6.resize((45,50))
 img_6 = ImageTk.PhotoImage(img_6)
 btn_6 = Button(frame_left, text='Temperature', image=img_6, compound=LEFT, width=130, height=50, relief='flat',
                overrelief='solid', anchor='nw', font=('Ivy 10 bold'), bg=cor03, fg=cor02)
