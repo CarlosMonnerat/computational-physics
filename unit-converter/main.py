@@ -33,7 +33,19 @@ l_app_name = Label(frame_up, text='Measurement Units Calculator', height=1, padx
                    font='Ivy 15 bold', bg=cor02, fg=cor03)
 l_app_name.place(x=50, y=10)
 
-# ------------------------------------ Settings Frame_left -------------------------------------
+# ---------------------------- Configuring the functionality -------------------------------------
+units = {'weight': [{'kg': 1000}, {'hg': 100}, {'dag': 10}, {'g': 1}, {'dg': 0.1}, {'cg': 0.01}, {'mg': 0.001}],
+         'time': [{'year': 12}, {'month': 30}, {'day': 24}, {'hour': 60}, {'min': 60}, {'s': 1}, {'ms': 0.001}],
+         'length': [{'km': 1000}, {'hm': 100}, {'dam': 10}, {'m': 1}, {'dm': 0.1}, {'cm': 0.01}, {'mm': 0.001}],
+         'area': [{'km²': 0.000001}, {'hectare': 0.0001}, {'m²': 1}, {'cm²': 10000}, {'mm²': 1000000}],
+         'volume': [{'l': 1000}, {'m³': 1}, {'ml': 1000000}],
+         'speed': [{'km/h': 3.6}, {'m/s': 1}, {'mm/s': 0.001}],
+         'temperature': [{'ºRa': 491.67}, {'K': 273.15}, {'ºF': 32}, {'ºC': 0}],
+         'energy': [{'kJ': 4.184}, {'J': 4184}, {'kcal': 1}, {'cal': 1000}, {'watt hour': 1.16222}],
+         'pressure': [{'Bar': 0.00001}, {'Pa': 1}, {'atm': 0.00000986923}]
+         }
+
+# ------------------------------------ Configuring Frame_left -------------------------------------
 # Weight Button
 img_0 = Image.open('icons/weight.png')
 img_0 = img_0.resize((50, 50))
@@ -58,11 +70,11 @@ btn_2 = Button(frame_left, text='Length', image=img_2, compound=LEFT, width=130,
                overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
 btn_2.grid(row=0, column=2, sticky=NSEW, pady=5, padx=5)
 
-# Square Button
+# Area Button
 img_3 = Image.open('icons/square.png')
 img_3 = img_3.resize((50, 50))
 img_3 = ImageTk.PhotoImage(img_3)
-btn_3 = Button(frame_left, text='Square', image=img_3, compound=LEFT, width=130, height=50, relief='flat',
+btn_3 = Button(frame_left, text='Area', image=img_3, compound=LEFT, width=130, height=50, relief='flat',
                overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
 btn_3.grid(row=1, column=0, sticky=NSEW, pady=5, padx=5)
 
@@ -125,6 +137,8 @@ l_to = Label(frame_right, text='to', height=1, padx=3, relief='groove', anchor='
 l_to.place(x=108, y=70)
 c_to = ttk.Combobox(frame_right, width=5, justify='center', font='Ivy 8 bold')
 c_to.place(x=135, y=70)
+
+# -------------------------------------------------------------------------------------------------------
 
 
 # --------------------- Settings Frame_right --------------
