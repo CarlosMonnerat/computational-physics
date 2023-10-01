@@ -35,7 +35,7 @@ l_app_name.place(x=50, y=10)
 
 # ---------------------------- Configuring the functionality -------------------------------------
 units = {'weight': [{'kg': 1000}, {'hg': 100}, {'dag': 10}, {'g': 1}, {'dg': 0.1}, {'cg': 0.01}, {'mg': 0.001}],
-         'time': [{'year': 12}, {'month': 30}, {'day': 24}, {'hour': 60}, {'min': 60}, {'s': 1}, {'ms': 0.001}],
+         'time': [{'year': 12}, {'month': 30}, {'day': 24}, {'hour': 60}, {'min': 60}, {'seg': 1}, {'ms': 0.001}],
          'length': [{'km': 1000}, {'hm': 100}, {'dam': 10}, {'m': 1}, {'dm': 0.1}, {'cm': 0.01}, {'mm': 0.001}],
          'area': [{'km²': 0.000001}, {'hectare': 0.0001}, {'m²': 1}, {'cm²': 10000}, {'mm²': 1000000}],
          'volume': [{'l': 1000}, {'m³': 1}, {'ml': 1000000}],
@@ -45,77 +45,95 @@ units = {'weight': [{'kg': 1000}, {'hg': 100}, {'dag': 10}, {'g': 1}, {'dg': 0.1
          'pressure': [{'Bar': 0.00001}, {'Pa': 1}, {'atm': 0.00000986923}]
          }
 
+
+def show_menu(i):
+    unit_from = []
+    unit_to = []
+    unit_values = []
+
+    for j in units[i]:
+        for k, v in j.items():
+            unit_from.append(k)
+            unit_to.append(k)
+            unit_values.append(v)
+
+    c_from['values'] = unit_from
+    c_to['values'] = unit_to
+
+
 # ------------------------------------ Configuring Frame_left -------------------------------------
 # Weight Button
 img_0 = Image.open('icons/weight.png')
 img_0 = img_0.resize((50, 50))
 img_0 = ImageTk.PhotoImage(img_0)
-btn_0 = Button(frame_left, text='Weight', image=img_0, compound=LEFT, width=130, height=50, relief='flat',
-               overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
+btn_0 = Button(frame_left, command=lambda: show_menu('weight'), text='Weight', image=img_0, compound=LEFT, width=130,
+               height=50, relief='flat', overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
 btn_0.grid(row=0, column=0, sticky=NSEW, pady=5, padx=5)
 
 # Time Button
 img_1 = Image.open('icons/time.png')
 img_1 = img_1.resize((50, 50))
 img_1 = ImageTk.PhotoImage(img_1)
-btn_1 = Button(frame_left, text='Time', image=img_1, compound=LEFT, width=130, height=50, relief='flat',
-               overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
+btn_1 = Button(frame_left, command=lambda: show_menu('time'), text='Time', image=img_1, compound=LEFT, width=130,
+               height=50, relief='flat', overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
 btn_1.grid(row=0, column=1, sticky=NSEW, pady=5, padx=5)
 
 # Length Button
 img_2 = Image.open('icons/length.png')
 img_2 = img_2.resize((50, 50))
 img_2 = ImageTk.PhotoImage(img_2)
-btn_2 = Button(frame_left, text='Length', image=img_2, compound=LEFT, width=130, height=50, relief='flat',
-               overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
+btn_2 = Button(frame_left, command=lambda: show_menu('length'), text='Length', image=img_2, compound=LEFT, width=130,
+               height=50, relief='flat', overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
 btn_2.grid(row=0, column=2, sticky=NSEW, pady=5, padx=5)
 
 # Area Button
 img_3 = Image.open('icons/square.png')
 img_3 = img_3.resize((50, 50))
 img_3 = ImageTk.PhotoImage(img_3)
-btn_3 = Button(frame_left, text='Area', image=img_3, compound=LEFT, width=130, height=50, relief='flat',
-               overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
+btn_3 = Button(frame_left, command=lambda: show_menu('area'), text='Area', image=img_3, compound=LEFT, width=130,
+               height=50, relief='flat', overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
 btn_3.grid(row=1, column=0, sticky=NSEW, pady=5, padx=5)
 
 # Volume Button
 img_4 = Image.open('icons/volume.png')
 img_4 = img_4.resize((50, 50))
 img_4 = ImageTk.PhotoImage(img_4)
-btn_4 = Button(frame_left, text='Volume', image=img_4, compound=LEFT, width=130, height=50, relief='flat',
-               overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
+btn_4 = Button(frame_left, command=lambda: show_menu('volume'), text='Volume', image=img_4, compound=LEFT, width=130,
+               height=50, relief='flat', overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
 btn_4.grid(row=1, column=1, sticky=NSEW, pady=5, padx=5)
 
 # Speed Button
 img_5 = Image.open('icons/speed.png')
 img_5 = img_5.resize((50, 50))
 img_5 = ImageTk.PhotoImage(img_5)
-btn_5 = Button(frame_left, text='Speed', image=img_5, compound=LEFT, width=130, height=50, relief='flat',
-               overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
+btn_5 = Button(frame_left, command=lambda: show_menu('speed'), text='Speed', image=img_5, compound=LEFT, width=130,
+               height=50, relief='flat', overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
 btn_5.grid(row=1, column=2, sticky=NSEW, pady=5, padx=5)
 
 # Temperature Button
 img_6 = Image.open('icons/temperature.png')
 img_6 = img_6.resize((45, 50))
 img_6 = ImageTk.PhotoImage(img_6)
-btn_6 = Button(frame_left, text='Temperature', image=img_6, compound=LEFT, width=130, height=50, relief='flat',
-               overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
+btn_6 = Button(frame_left, command=lambda: show_menu('temperature'), text='Temperature', image=img_6, compound=LEFT,
+               width=130, height=50, relief='flat', overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03,
+               fg=cor02)
 btn_6.grid(row=2, column=0, sticky=NSEW, pady=5, padx=5)
 
 # Energy Button
 img_7 = Image.open('icons/energy.png')
 img_7 = img_7.resize((50, 50))
 img_7 = ImageTk.PhotoImage(img_7)
-btn_7 = Button(frame_left, text='Energy', image=img_7, compound=LEFT, width=130, height=50, relief='flat',
-               overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
+btn_7 = Button(frame_left, command=lambda: show_menu('energy'), text='Energy', image=img_7, compound=LEFT, width=130,
+               height=50, relief='flat', overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
 btn_7.grid(row=2, column=1, sticky=NSEW, pady=5, padx=5)
 
 # Pressure Button
 img_8 = Image.open('icons/pressure.png')
 img_8 = img_8.resize((50, 50))
 img_8 = ImageTk.PhotoImage(img_8)
-btn_8 = Button(frame_left, text='Pressure', image=img_8, compound=LEFT, width=130, height=50, relief='flat',
-               overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03, fg=cor02)
+btn_8 = Button(frame_left, command=lambda: show_menu('pressure'), text='Pressure', image=img_8, compound=LEFT,
+               width=130, height=50, relief='flat', overrelief='solid', anchor='nw', font='Ivy 10 bold', bg=cor03,
+               fg=cor02)
 btn_8.grid(row=2, column=2, sticky=NSEW, pady=5, padx=5)
 
 
