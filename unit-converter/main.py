@@ -9,6 +9,7 @@ cor01 = '#3b3b3b'     # Black
 cor02 = '#ffffff'     # White
 cor03 = '#48b3e0'     # Blue
 
+# --------------------------------- Create Window ------------------------------
 window = Tk()
 window.title('Meson Pi Software')
 window.geometry('650x260')
@@ -28,12 +29,12 @@ frame_right.place(x=454, y=2)
 style = ttk.Style(window)
 style.theme_use("clam")
 
-# ------------------------------------ Labels for Frame_up -----------------------------
+# ------------------------------------------ Labels for Frame_up --------------------------------------------------
 l_app_name = Label(frame_up, text='Measurement Units Calculator', height=1, padx=0, relief='flat', anchor='center',
                    font='Ivy 15 bold', bg=cor02, fg=cor03)
 l_app_name.place(x=50, y=10)
 
-# ---------------------------- Configuring the functionality -------------------------------------
+# -------------------------------------- Configuring the functionality -------------------------------------------
 units = {'weight': [{'kg': 1000}, {'hg': 100}, {'dag': 10}, {'g': 1}, {'dg': 0.1}, {'cg': 0.01}, {'mg': 0.001}],
          'time': [{'year': 12}, {'month': 30}, {'day': 24}, {'hour': 60}, {'min': 60}, {'seg': 1}, {'ms': 0.001}],
          'length': [{'km': 1000}, {'hm': 100}, {'dam': 10}, {'m': 1}, {'dm': 0.1}, {'cm': 0.01}, {'mm': 0.001}],
@@ -137,29 +138,26 @@ btn_8 = Button(frame_left, command=lambda: show_menu('pressure'), text='Pressure
 btn_8.grid(row=2, column=2, sticky=NSEW, pady=5, padx=5)
 
 
-# ------------------------------ Labels for Frame_right -----------------------------
+# -------------------------------------- Labels for Frame_right -------------------------------------
+# Title
 l_unit_name = Label(frame_right, text='Unit', width=16, height=2, padx=0, relief='groove', anchor='center',
                     font='Ivy 15 bold', bg=cor02, fg=cor01)
 l_unit_name.place(x=0, y=0)
 
-# -------------------------------------------------------------------------------------------------------
+# Label and Combobox 'from'
 l_from = Label(frame_right, text='from', height=1, padx=3, relief='groove', anchor='center',
                font='Ivy 10 bold', bg=cor02, fg=cor01)
 l_from.place(x=5, y=70)
 c_from = ttk.Combobox(frame_right, width=5, justify='center', font='Ivy 8 bold')
 c_from.place(x=50, y=70)
 
-# -------------------------------------------------------------------------------------------------------
+# Label and Combobox 'to'
 l_to = Label(frame_right, text='to', height=1, padx=3, relief='groove', anchor='center',
              font='Ivy 10 bold', bg=cor02, fg=cor01)
 l_to.place(x=108, y=70)
 c_to = ttk.Combobox(frame_right, width=5, justify='center', font='Ivy 8 bold')
 c_to.place(x=135, y=70)
 
-# -------------------------------------------------------------------------------------------------------
-
-
-# --------------------- Settings Frame_right --------------
-
+# -------------------------------------------------------------------------------------------------
 
 window.mainloop()
