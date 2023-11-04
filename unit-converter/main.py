@@ -62,7 +62,7 @@ def show_menu(i):
     c_to['values'] = unit_to
 
 
-# ------------------------------------ Configuring Frame_left -------------------------------------
+# ------------------------------------ Labels for Frame_left -------------------------------------
 # Weight Button
 img_0 = Image.open('icons/weight.png')
 img_0 = img_0.resize((50, 50))
